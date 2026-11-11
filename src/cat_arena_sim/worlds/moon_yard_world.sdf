@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+  <world name="caterpillar_moon_yard">
+    <gravity>0 0 -9.81</gravity>
+
+    <physics name="default_physics" type="ignored">
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+
+    <scene>
+      <ambient>0.55 0.55 0.55 1</ambient>
+      <background>0.12 0.14 0.18 1</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <light name="sun" type="directional">
+      <pose>0 0 8 0 0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <diffuse>0.9 0.86 0.78 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.4 0.2 -1</direction>
+    </light>
+
+    <!-- The zone boundaries below are a proposed, configurable simulation layout.
+         The rulebook does not specify exact zone coordinates in its text. -->
+    <include>
+      <uri>model://arena_terrain</uri>
+      <name>arena_sand_bed</name>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <!-- Safety containment only. The autonomy stack must NOT use these walls
+         for localization, mapping, or obstacle avoidance. -->
+    <model name="arena_boundary_walls">
+      <static>true</static>
+      <link name="walls">
+        <collision name="west_wall_collision"><pose>-4.55 0 0.10 0 0 0</pose><geometry><box><size>0.10 5.20 0.50</size></box></geometry></collision>
+        <visual name="west_wall_visual"><pose>-4.55 0 0.10 0 0 0</pose><geometry><box><size>0.10 5.20 0.50</size></box></geometry><material><ambient>0.22 0.24 0.28 1</ambient><diffuse>0.30 0.32 0.36 1</diffuse></material></visual>
+        <collision name="east_wall_collision"><pose>4.55 0 0.10 0 0 0</pose><geometry><box><size>0.10 5.20 0.50</size></box></geometry></collision>
+        <visual name="east_wall_visual"><pose>4.55 0 0.10 0 0 0</pose><geometry><box><size>0.10 5.20 0.50</size></box></geometry><material><ambient>0.22 0.24 0.28 1</ambient><diffuse>0.30 0.32 0.36 1</diffuse></material></visual>
+        <collision name="south_wall_collision"><pose>0 -2.55 0.10 0 0 0</pose><geometry><box><size>9.20 0.10 0.50</size></box></geometry></collision>
+        <visual name="south_wall_visual"><pose>0 -2.55 0.10 0 0 0</pose><geometry><box><size>9.20 0.10 0.50</size></box></geometry><material><ambient>0.22 0.24 0.28 1</ambient><diffuse>0.30 0.32 0.36 1</diffuse></material></visual>
+        <collision name="north_wall_collision"><pose>0 2.55 0.10 0 0 0</pose><geometry><box><size>9.20 0.10 0.50</size></box></geometry></collision>
+        <visual name="north_wall_visual"><pose>0 2.55 0.10 0 0 0</pose><geometry><box><size>9.20 0.10 0.50</size></box></geometry><material><ambient>0.22 0.24 0.28 1</ambient><diffuse>0.30 0.32 0.36 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!-- Visual-only divider lines: no collision and no navigation function.
+         X coordinates: start ends at -3.0; obstacle ends at 0.9;
+         excavation ends at 2.7; construction occupies the east end. -->
+    <model name="zone_dividers">
+      <static>true</static>
+      <link name="markers">
+        <visual name="start_obstacle_line"><pose>-3.0 0 0.012 0 0 0</pose><geometry><box><size>0.025 4.80 0.012</size></box></geometry><material><ambient>0.1 0.55 0.95 1</ambient><diffuse>0.1 0.55 0.95 1</diffuse></material></visual>
+        <visual name="obstacle_excavation_line"><pose>0.9 0 0.012 0 0 0</pose><geometry><box><size>0.025 4.80 0.012</size></box></geometry><material><ambient>0.95 0.75 0.1 1</ambient><diffuse>0.95 0.75 0.1 1</diffuse></material></visual>
+        <visual name="excavation_construction_line"><pose>2.7 0 0.012 0 0 0</pose><geometry><box><size>0.025 4.80 0.012</size></box></geometry><material><ambient>0.15 0.85 0.35 1</ambient><diffuse>0.15 0.85 0.35 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!-- Proposed berm target strip: long direction is along the arena's Y axis.
+         Markers are visual-only; the robot must deposit material within this area. -->
+    <model name="berm_target_zone_marker">
+      <static>true</static>
+      <link name="outline">
+        <visual name="edge_west"><pose>3.55 0 0.014 0 0 0</pose><geometry><box><size>0.025 3.0 0.014</size></box></geometry><material><ambient>0.95 0.35 0.08 1</ambient><diffuse>0.95 0.35 0.08 1</diffuse></material></visual>
+        <visual name="edge_east"><pose>4.25 0 0.014 0 0 0</pose><geometry><box><size>0.025 3.0 0.014</size></box></geometry><material><ambient>0.95 0.35 0.08 1</ambient><diffuse>0.95 0.35 0.08 1</diffuse></material></visual>
+        <visual name="edge_south"><pose>3.90 -1.5 0.014 0 0 0</pose><geometry><box><size>0.70 0.025 0.014</size></box></geometry><material><ambient>0.95 0.35 0.08 1</ambient><diffuse>0.95 0.35 0.08 1</diffuse></material></visual>
+        <visual name="edge_north"><pose>3.90 1.5 0.014 0 0 0</pose><geometry><box><size>0.70 0.025 0.014</size></box></geometry><material><ambient>0.95 0.35 0.08 1</ambient><diffuse>0.95 0.35 0.08 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!-- Three obstacle-zone boulders. Ellipsoid dimensions vary; diameters are
+         approximately 0.32-0.40 m, matching the rulebook's boulder scale. -->
+    <model name="boulder_01">
+      <static>true</static><pose>-2.55 -1.20 0.15 0.08 0.12 0.20</pose>
+      <link name="rock"><collision name="collision"><geometry><ellipsoid><radii>0.18 0.17 0.15</radii></ellipsoid></geometry></collision><visual name="visual"><geometry><ellipsoid><radii>0.18 0.17 0.15</radii></ellipsoid></geometry><material><ambient>0.28 0.29 0.30 1</ambient><diffuse>0.40 0.40 0.42 1</diffuse></material></visual></link>
+    </model>
+    <model name="boulder_02">
+      <static>true</static><pose>-1.00 1.25 0.16 -0.05 0.18 -0.35</pose>
+      <link name="rock"><collision name="collision"><geometry><ellipsoid><radii>0.17 0.19 0.16</radii></ellipsoid></geometry></collision><visual name="visual"><geometry><ellipsoid><radii>0.17 0.19 0.16</radii></ellipsoid></geometry><material><ambient>0.32 0.30 0.27 1</ambient><diffuse>0.46 0.43 0.38 1</diffuse></material></visual></link>
+    </model>
+    <model name="boulder_03">
+      <static>true</static><pose>0.15 -0.80 0.14 0.12 -0.08 0.50</pose>
+      <link name="rock"><collision name="collision"><geometry><ellipsoid><radii>0.20 0.18 0.14</radii></ellipsoid></geometry></collision><visual name="visual"><geometry><ellipsoid><radii>0.20 0.18 0.14</radii></ellipsoid></geometry><material><ambient>0.25 0.26 0.28 1</ambient><diffuse>0.37 0.39 0.42 1</diffuse></material></visual></link>
+    </model>
+
+    <!-- A smaller optional boulder in the excavation zone, permitted by the rules. -->
+    <model name="boulder_excavation_01">
+      <static>true</static><pose>1.85 1.45 0.10 0.10 0.10 0.10</pose>
+      <link name="rock"><collision name="collision"><geometry><ellipsoid><radii>0.12 0.12 0.10</radii></ellipsoid></geometry></collision><visual name="visual"><geometry><ellipsoid><radii>0.12 0.12 0.10</radii></ellipsoid></geometry><material><ambient>0.30 0.29 0.27 1</ambient><diffuse>0.44 0.42 0.39 1</diffuse></material></visual></link>
+    </model>
+
+    <gui>
+      <camera_pose>-8.5 -9.0 7.0 0 0.48 0.78</camera_pose>
+    </gui>
+  </world>
+</sdf>

@@ -1,0 +1,1 @@
+/home/chaaru/cat_autonomy_ws/build/cat_arena_sim/ament_cmake_environment_hooks/local_setup.bash

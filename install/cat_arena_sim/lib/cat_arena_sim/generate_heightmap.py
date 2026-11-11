@@ -1,0 +1,1 @@
+/home/chaaru/cat_autonomy_ws/src/cat_arena_sim/scripts/generate_heightmap.py

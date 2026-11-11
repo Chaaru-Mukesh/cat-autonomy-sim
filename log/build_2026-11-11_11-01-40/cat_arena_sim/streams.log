@@ -1,0 +1,46 @@
+[0.019s] Invoking command in '/home/chaaru/cat_autonomy_ws/build/cat_arena_sim': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/chaaru/ros2_ws/install/my_robot_sim:/home/chaaru/ros2_ws/install/algorithms:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/chaaru/cat_autonomy_ws/src/cat_arena_sim -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/chaaru/cat_autonomy_ws/install/cat_arena_sim
+[0.242s] -- The C compiler identification is GNU 13.3.0
+[0.413s] -- The CXX compiler identification is GNU 13.3.0
+[0.449s] -- Detecting C compiler ABI info
+[0.603s] -- Detecting C compiler ABI info - done
+[0.618s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.620s] -- Detecting C compile features
+[0.621s] -- Detecting C compile features - done
+[0.640s] -- Detecting CXX compiler ABI info
+[0.810s] -- Detecting CXX compiler ABI info - done
+[0.824s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.825s] -- Detecting CXX compile features
+[0.826s] -- Detecting CXX compile features - done
+[0.839s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.089s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.211s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.428s] -- Configuring done (1.4s)
+[1.431s] -- Generating done (0.0s)
+[1.433s] -- Build files have been written to: /home/chaaru/cat_autonomy_ws/build/cat_arena_sim
+[1.440s] Invoked command in '/home/chaaru/cat_autonomy_ws/build/cat_arena_sim' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/chaaru/ros2_ws/install/my_robot_sim:/home/chaaru/ros2_ws/install/algorithms:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/chaaru/cat_autonomy_ws/src/cat_arena_sim -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/chaaru/cat_autonomy_ws/install/cat_arena_sim
+[1.441s] Invoking command in '/home/chaaru/cat_autonomy_ws/build/cat_arena_sim': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/chaaru/ros2_ws/install/my_robot_sim:/home/chaaru/ros2_ws/install/algorithms:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chaaru/cat_autonomy_ws/build/cat_arena_sim -- -j20 -l20
+[1.498s] Invoked command in '/home/chaaru/cat_autonomy_ws/build/cat_arena_sim' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/chaaru/ros2_ws/install/my_robot_sim:/home/chaaru/ros2_ws/install/algorithms:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chaaru/cat_autonomy_ws/build/cat_arena_sim -- -j20 -l20
+[1.512s] Invoking command in '/home/chaaru/cat_autonomy_ws/build/cat_arena_sim': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/chaaru/ros2_ws/install/my_robot_sim:/home/chaaru/ros2_ws/install/algorithms:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/chaaru/cat_autonomy_ws/build/cat_arena_sim
+[1.528s] -- Install configuration: ""
+[1.529s] -- Execute custom install script
+[1.530s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/cat_arena_sim/worlds/moon_yard_world.sdf
+[1.545s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/cat_arena_sim/models/arena_terrain/arena_heightmap.pgm
+[1.560s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/cat_arena_sim/models/arena_terrain/model.config
+[1.573s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/cat_arena_sim/models/arena_terrain/model.sdf
+[1.587s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/lib/cat_arena_sim/generate_heightmap.py
+[1.601s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/ament_index/resource_index/package_run_dependencies/cat_arena_sim
+[1.617s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/ament_index/resource_index/parent_prefix_path/cat_arena_sim
+[1.632s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/cat_arena_sim/environment/ament_prefix_path.sh
+[1.649s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/cat_arena_sim/environment/ament_prefix_path.dsv
+[1.666s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/cat_arena_sim/environment/path.sh
+[1.679s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/cat_arena_sim/environment/path.dsv
+[1.695s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/cat_arena_sim/local_setup.bash
+[1.710s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/cat_arena_sim/local_setup.sh
+[1.723s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/cat_arena_sim/local_setup.zsh
+[1.741s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/cat_arena_sim/local_setup.dsv
+[1.757s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/cat_arena_sim/package.dsv
+[1.769s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/ament_index/resource_index/packages/cat_arena_sim
+[1.782s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/cat_arena_sim/cmake/cat_arena_simConfig.cmake
+[1.798s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/cat_arena_sim/cmake/cat_arena_simConfig-version.cmake
+[1.812s] -- Symlinking: /home/chaaru/cat_autonomy_ws/install/cat_arena_sim/share/cat_arena_sim/package.xml
+[1.828s] Invoked command in '/home/chaaru/cat_autonomy_ws/build/cat_arena_sim' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/chaaru/ros2_ws/install/my_robot_sim:/home/chaaru/ros2_ws/install/algorithms:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/chaaru/cat_autonomy_ws/build/cat_arena_sim

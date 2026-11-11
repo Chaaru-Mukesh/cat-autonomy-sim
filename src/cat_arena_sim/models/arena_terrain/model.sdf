@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+  <model name="arena_terrain">
+    <static>true</static>
+    <link name="sand_bed">
+      <collision name="terrain_collision">
+        <geometry>
+          <heightmap>
+            <uri>model://arena_terrain/arena_heightmap.pgm</uri>
+            <size>9 5 0.30</size>
+            <pos>0 0 -0.30</pos>
+          </heightmap>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.85</mu>
+              <mu2>0.75</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="terrain_visual">
+        <geometry>
+          <heightmap>
+            <uri>model://arena_terrain/arena_heightmap.pgm</uri>
+            <size>9 5 0.30</size>
+            <pos>0 0 -0.30</pos>
+          </heightmap>
+        </geometry>
+        <material>
+          <ambient>0.48 0.34 0.20 1</ambient>
+          <diffuse>0.62 0.46 0.28 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
